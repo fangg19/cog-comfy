@@ -17,7 +17,7 @@ COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
 mimetypes.add_type("image/webp", ".webp")
-mimetypes.add_type("video/mp4, .mp4")
+mimetypes.add_type("video/mp4,", ".mp4")
 
 # Save your example JSON to the same directory as predict.py
 api_json_file = "workflow_api.json"
