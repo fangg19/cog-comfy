@@ -63,7 +63,6 @@ class Predictor(BasePredictor):
 
         sampler = workflow["670"]["inputs"]
         sampler["seed"] = kwargs["seed"]
-        pass
 
     def predict(
         self,
