@@ -63,7 +63,7 @@ build:
     - timm
 
     - comfyui_controlnet_aux
-    # https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/requirements.txt
+    - https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/requirements.txt
     - importlib_metadata
     - opencv-python-headless>=4.0.1.24
     - filelock
