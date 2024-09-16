@@ -73,6 +73,7 @@ class ComfyUI:
         weights_filetypes = self.weights_downloader.supported_filetypes
 
         for node in workflow.values():
+            print(f"Checking node {node['class_type']}")
             self.apply_helper_methods("add_weights", weights_to_download, Node(node))
 
             for input in node["inputs"].values():

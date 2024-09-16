@@ -17,7 +17,7 @@ COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
 mimetypes.add_type("image/webp", ".webp")
-mimetypes.add_type("video/mp4,", ".mp4")
+# mimetypes.add_type("video/mp4,", ".mp4")
 
 # Save your example JSON to the same directory as predict.py
 api_json_file = "workflow_api.json"
@@ -35,10 +35,14 @@ class Predictor(BasePredictor):
         # Give a list of weights filenames to download during setup
         with open(api_json_file, "r") as file:
             workflow = json.loads(file.read())
+        
+        print("workflow ---", workflow)
+
         self.comfyUI.handle_weights(
             workflow,
             weights_to_download=["ip-adapter_sd15_light_v11.bin", "photon_v1.safetensors", "control_v11p_sd15_lineart.pth", "control_v11p_sd15_openpose.pth", "Style_Retro.safetensors", "v3_sd15_mm.ckpt", "ip-adapter-plus_sd15.bin", "vae-ft-mse-840000-ema-pruned.safetensors",],
         )
+        print("Setup complete")
 
     def filename_with_extension(self, input_file, prefix):
         extension = os.path.splitext(input_file.name)[1]
